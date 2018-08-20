@@ -1,0 +1,12 @@
+#AuthUserFile /media/taras/Storage/www/batkomaepravolocal/.htpasswd
+#AuthUserFile  /var/www/stage/data/www/stage.batkomaepravo.org/.htpasswd
+#AuthType Basic
+#AuthName "My restricted Area"
+#Require valid-user
+
+<IfModule mod_rewrite.c>
+       Options -MultiViews
+       RewriteEngine On
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

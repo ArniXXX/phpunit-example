@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product page: {{ product.name }}{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <img class="card-img-top" src="/img/no-image-available.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Product: {{ product.name }} ✅</h5>
+            <p class="card-text">Price: {{ product.price }}$</p>
+        </div>
+    </div>
+{% endblock %}

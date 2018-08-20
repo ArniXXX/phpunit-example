@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Welcome to the Super shop!' | trans }}{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>{{ 'Welcome to the Super shop!' | trans }}</h1>
+
+        {{ 'You can buy this products' | trans }}
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ 'Name' | trans }}</th>
+                <th scope="col">{{ 'Price' | trans }}</th>
+                <th scope="col">{{ 'Edit' | trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in showcase %}
+                <tr>
+                    <th scope="row">{{ product.id }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>
+                        <a href="{{ path('product_edit', {id: product.id}) }}">
+                            {{ 'Edit' | trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

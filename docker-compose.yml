@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    db:
+        image: mysql:5.6
+        environment:
+            MYSQL_ROOT_PASSWORD: qwertz
+            MYSQL_DATABASE: dev_phpunit
+        ports:
+        - "3306:3306"
