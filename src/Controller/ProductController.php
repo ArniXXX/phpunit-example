@@ -87,7 +87,7 @@ class ProductController extends AbstractController
 
             return $this->redirectToRoute('product_edit', ['id' => $product->getId()], 301);
         } else {
-            $this->get('session')->getFlashBag()->add('notice', 'Something wrong!!!');
+            $this->get('session')->getFlashBag()->add('error', 'Something wrong!!!');
 
             return $this->redirectToRoute('product_edit', ['id' => $product->getId()], 301);
         }
