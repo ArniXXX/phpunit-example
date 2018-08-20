@@ -37,7 +37,7 @@ class WarehouseController extends AbstractController
         }
 
         $productForm = $this->createForm(WarehouseType::class, $product, ['action' =>
-            $this->generateUrl('product_save', ['id' => $product->getId()])
+            $this->generateUrl('warehouse_save', ['id' => $product->getId()])
         ]);
 
         return $this->render('product/edit.html.twig', [
